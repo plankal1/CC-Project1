@@ -25,6 +25,7 @@ def upload_classification_data():
     
     with open(CSV_FILE, "r") as csvfile:
         reader = csv.reader(csvfile)
+        next(reader)
         for row in reader:
             filename, prediction = row[0].strip(), row[1].strip()
             print(filename)
